@@ -11,17 +11,17 @@ const GuestForm = () => {
         <div className="options">
           <label className="container">
             Non-veg
-            <input type="radio" name="dietary" Value="Non-Veg" />
+            <input type="radio" name="dietary" value="Non-Veg" />
             <span className="checkmark"></span>
           </label>
           <label className="container">
             Vegan
-            <input type="radio" name="dietary" Value="Vegan" />
+            <input type="radio" name="dietary" value="Vegan" />
             <span className="checkmark"></span>
           </label>
           <label className="container">
             Keto
-            <input type="radio" name="dietary" Value="Pesacatarian" />
+            <input type="radio" name="dietary" value="Keto" />
             <span className="checkmark"></span>
           </label>
         </div>

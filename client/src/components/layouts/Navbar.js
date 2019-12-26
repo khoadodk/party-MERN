@@ -5,7 +5,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="logo">
         <h1>
-          Party<i class="fas fa-glass-cheers"></i>
+          Party<i className="fas fa-glass-cheers"></i>
         </h1>
       </div>
 
