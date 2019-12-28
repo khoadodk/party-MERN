@@ -1,24 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import GuestContext from '../context/guestContext/guestContext';
 
 const Guest = ({ guest }) => {
-  const { name, dietary, isConfirmed, phone } = guest;
+  const { id, name, dietary, isConfirmed, phone } = guest;
+  const { removeGuest, confirmGuest, editGuest } = useContext(GuestContext);
+
+  const handleRemove = () => {
+    removeGuest(id);
+  };
+
+  const handleConFirm = () => {
+    confirmGuest({ ...guest, isConfirmed: !isConfirmed });
+  };
+
+  const checkConfirm = isConfirmed ? 'Confirm' : 'Unconfirmed';
   return (
     <div className="guest-card">
       <div className="card-head">
         <div>
-          <label className={`${isConfirmed && 'confirm'}`}>
+          <label className={checkConfirm}>
             {' '}
-            Confirmed
-            <i className={`fas fa-check-square ${isConfirmed && 'confirm'}`}>
-              <input type="checkbox" />
+            {checkConfirm}
+            <i className={`fas fa-check-square ${checkConfirm}`}>
+              <input type="checkbox" onChange={handleConFirm} />
             </i>
           </label>
         </div>
         <div>
           <button>
-            <i className="fas fa-user-edit"></i>
+            <i
+              className="fas fa-user-edit"
+              onClick={() => editGuest(guest)}
+            ></i>
           </button>
-          <button>
+          <button onClick={handleRemove}>
             <i className="fas fa-trash-alt remove"></i>
           </button>
         </div>
