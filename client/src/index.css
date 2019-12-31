@@ -84,7 +84,7 @@ form {
   position: relative;
 }
 .invite-section {
-  flex-basis: 33%;
+  flex-basis: 28%;
 }
 .invite-section h1 {
   color: var(--primary-color);
@@ -452,7 +452,7 @@ td {
 @media (max-width: 1300px) {
   .main {
     justify-content: space-between;
-    width: 95%;
+    width: 100%;
     margin: auto;
   }
   .guests {
@@ -510,9 +510,6 @@ td {
   }
 }
 @media (max-width: 760px) {
-  .sm-hide {
-    display: none;
-  }
   li {
     padding: 0.2rem;
   }

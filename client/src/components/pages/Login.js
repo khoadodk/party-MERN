@@ -7,7 +7,7 @@ const Login = ({ history }) => {
 
   useEffect(() => {
     if (userAuth) history.push('/');
-  }, [userAuth]);
+  }, [userAuth, history]);
 
   const [user, setUser] = useState({
     email: '',

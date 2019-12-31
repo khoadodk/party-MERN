@@ -4,7 +4,10 @@ import {
   FAIL_LOGIN,
   FAIL_REGISTER,
   SET_ERROR,
-  CLEAR_ERROR
+  CLEAR_ERROR,
+  LOG_OUT,
+  SET_USER,
+  AUTH_ERROR
 } from '../types';
 
 export default (state, action) => {
@@ -19,8 +22,12 @@ export default (state, action) => {
       };
     case FAIL_LOGIN:
     case FAIL_REGISTER:
+    case LOG_OUT:
+    case AUTH_ERROR:
+      localStorage.removeItem('token');
       return {
         ...state,
+        user: null,
         userAuth: null,
         errors: action.payload
       };
@@ -35,6 +42,14 @@ export default (state, action) => {
         errors: null
       };
     }
+    case SET_USER:
+      return {
+        ...state,
+        user: action.payload,
+        userAuth: true,
+        errors: null
+      };
+
     default:
       return state;
   }

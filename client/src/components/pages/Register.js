@@ -9,7 +9,7 @@ const Register = ({ history }) => {
 
   useEffect(() => {
     if (userAuth) history.push('/');
-  }, [userAuth]);
+  }, [userAuth, history]);
 
   const [user, setUser] = useState({
     name: '',

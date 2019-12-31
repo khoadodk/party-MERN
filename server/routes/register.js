@@ -36,7 +36,7 @@ router.post('/', validator, async (req, res) => {
       },
       (err, token) => {
         if (err) throw err;
-        res.send({ token });
+        res.json({ token });
       }
     );
   } catch (err) {
