@@ -6,13 +6,27 @@ import {
   REMOVE_GUEST,
   CONFIRM_GUEST,
   EDIT_GUEST,
-  CLEAR_EDIT
+  CLEAR_EDIT,
+  GET_GUESTS,
+  GUESTS_ERROR
 } from '../types';
 
 export default (state, { type, payload }) => {
   const regEx = new RegExp(`${payload}`, 'gi');
 
   switch (type) {
+    case GET_GUESTS:
+      return {
+        ...state,
+        guests: payload,
+        errors: null
+      };
+    case GUESTS_ERROR:
+      return {
+        ...state,
+        guests: [],
+        errors: payload
+      };
     case TOGGLE_FILTER:
       return { ...state, filterGuest: !state.filterGuest };
     case SEARCH_GUEST:
@@ -30,13 +44,13 @@ export default (state, { type, payload }) => {
     case REMOVE_GUEST:
       return {
         ...state,
-        guests: state.guests.filter(guest => guest.id !== payload)
+        guests: state.guests.filter(guest => guest._id !== payload)
       };
     case CONFIRM_GUEST:
       return {
         ...state,
         guests: state.guests.map(guest =>
-          guest.id === payload.id ? payload : guest
+          guest._id === payload._id ? payload : guest
         )
       };
     case EDIT_GUEST:

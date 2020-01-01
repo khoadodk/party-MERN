@@ -6,6 +6,9 @@ export const REMOVE_GUEST = 'REMOVE_GUEST';
 export const CONFIRM_GUEST = 'UPDATE_GUEST';
 export const EDIT_GUEST = 'EDIT_GUEST';
 export const CLEAR_EDIT = 'CLEAR_EDIT';
+export const GET_GUESTS = 'GET_GUESTS';
+export const GUESTS_ERROR = 'GUESTS_ERROR';
+
 // Auth
 export const SUCCESS_REGISTER = 'SUCCESS_REGISTER';
 export const SUCCESS_LOGIN = 'SUCCESS_LOGIN';
