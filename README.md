@@ -1,4 +1,4 @@
-# party-MERN
+# PARTY BOOKING
 A Party Check-In Application using MERN stack
 
 ## Features
